@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="680.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.imd.controle.TelaCampeonatoMMController">
+  <tabs>
+    <Tab text="Mata-Mata">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="190.0" layoutY="40.0" prefHeight="492.0" prefWidth="680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="96.0" prefWidth="680.0">
+                           <children>
+                              <GridPane prefHeight="80.0" prefWidth="680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="labelFase" text="OITAVAS DE FINAL" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Loma Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelCampeao" text="Campeao" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Loma Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnPrev" disable="true" mnemonicParsing="false" onAction="#faseAnterior" style="-fx-background-radius: 30;" text="&lt;" />
+                                    <Button fx:id="btnProx" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#proximaFase" style="-fx-background-radius: 30;" text="&gt;" GridPane.columnIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <ScrollPane prefHeight="429.0" prefWidth="680.0">
+                           <content>
+                              <GridPane fx:id="gpPartidas" maxHeight="-Infinity" maxWidth="-Infinity">
+                                <columnConstraints>
+                                  <ColumnConstraints fx:id="gpColCasa" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+                                    <ColumnConstraints fx:id="gpColTfCasa" hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="40.0" />
+                                  <ColumnConstraints fx:id="gpColVs" hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="155.0" />
+                                    <ColumnConstraints fx:id="gpColTfVisitante" hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="40.0" />
+                                    <ColumnConstraints fx:id="gpColVisitante" hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="174.0" />
+                                    <ColumnConstraints fx:id="gpColBtn" hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="47.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Melhor Defesa">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableMD" layoutX="59.0" layoutY="46.0" prefHeight="367.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="colNomeMD" editable="false" prefWidth="348.0" resizable="false" sortable="false" text="NOME" />
+                      <TableColumn fx:id="colGolsSofridosMD" editable="false" minWidth="0.0" prefWidth="331.0" resizable="false" sortable="false" text="GOLS SOFRIDOS" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Melhor Ataque">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableMA" layoutX="59.0" layoutY="46.0" prefHeight="367.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="colNomeMA" editable="false" prefWidth="356.0" resizable="false" sortable="false" text="NOME" />
+                        <TableColumn fx:id="colGolsMarcadosMA" editable="false" minWidth="0.0" prefWidth="323.0" resizable="false" sortable="false" text="GOLS MARCADOS" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Pior Defesa">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tablePD" layoutX="59.0" layoutY="46.0" prefHeight="367.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="colNomePD" editable="false" prefWidth="348.0" resizable="false" sortable="false" text="NOME" />
+                        <TableColumn fx:id="colGolsSofridosPD" editable="false" minWidth="0.0" prefWidth="331.0" resizable="false" sortable="false" text="GOLS SOFRIDOS" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Pior Ataque">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tablePA" layoutX="59.0" layoutY="46.0" prefHeight="367.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="colNomePA" editable="false" prefWidth="338.0" resizable="false" sortable="false" text="NOME" />
+                        <TableColumn fx:id="colGolsMarcadosPA" editable="false" minWidth="0.0" prefWidth="341.0" resizable="false" sortable="false" text="GOLS MARCADOS" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
