@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.imd.controle.TelaConfiguracoesController">
+   <top>
+      <AnchorPane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <AnchorPane prefHeight="0.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="140.0" prefWidth="60.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="108.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar layoutX="18.0" layoutY="34.0" prefHeight="40.0" prefWidth="737.0">
+              <buttons>
+                <Button fx:id="btnRemoverTodosTimes" mnemonicParsing="false" onAction="#removerTodosTimes" text="Remover todos os times" />
+                  <Button fx:id="btnEditarTime" mnemonicParsing="false" onAction="#editarTime" text="Editar time" />
+                  <Button fx:id="btnRemoverTodosCampeonatos" mnemonicParsing="false" onAction="#removerTodosCampeonatos" prefHeight="26.0" prefWidth="255.0" text="Remover todos os campeonatos" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="238.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="196.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="cbCampeonato" onAction="#selecionarCampeonato" prefHeight="26.0" prefWidth="224.0" promptText="Selecione um campeonato" GridPane.columnIndex="1" />
+            <Button fx:id="btnRemoverCampeonato" mnemonicParsing="false" onAction="#removerCampeonato" prefHeight="26.0" prefWidth="170.0" text="Remover Campeonato" GridPane.columnIndex="2" />
+            <ComboBox fx:id="cbTime" onAction="#selecionarTime" prefHeight="26.0" prefWidth="224.0" promptText="Selecione um time" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="btnRemoverTime" mnemonicParsing="false" onAction="#removerTime" prefHeight="26.0" prefWidth="170.0" text="Remover Time" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Campeonato:">
+               <font>
+                  <Font name="Loma Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Time:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Loma Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
